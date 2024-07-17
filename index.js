@@ -27,10 +27,9 @@ const unknownEndpoint = (request, response) => {
 
 // Define custom tokens
 morgan.token('body', (req) => JSON.stringify(req.body));
-morgan.token('headers', (req) => JSON.stringify(req.headers));
 
 // Custom format string using predefined and custom tokens
-const customFormat = ':method :url :status :res[content-length] - :response-time ms :body :headers';
+const customFormat = ':method :url :status :res[content-length] - :response-time ms :body';
 
 
 
@@ -39,6 +38,7 @@ app.use(express.json())
 // Use the custom format in Morgan middleware
 app.use(morgan(customFormat));
 app.use(cors())
+app.use(express.static('dist'))
 
 
 
