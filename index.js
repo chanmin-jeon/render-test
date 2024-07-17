@@ -31,9 +31,6 @@ morgan.token('body', (req) => JSON.stringify(req.body));
 // Custom format string using predefined and custom tokens
 const customFormat = ':method :url :status :res[content-length] - :response-time ms :body';
 
-
-
-
 app.use(express.json())
 // Use the custom format in Morgan middleware
 app.use(morgan(customFormat));
