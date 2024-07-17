@@ -1,3 +1,4 @@
 node_modules
-post_notes.rest
+rest_testing
+dist
 .env
